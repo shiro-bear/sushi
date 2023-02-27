@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+    <!-- CDN読み込み -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!-- CSSファイル読み込み -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="swiper infinite-slider">
+
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img id="a" src="normal.png"></div>
+            <div class="swiper-slide"><img id="a" src="normal.png"></div>
+            <div class="swiper-slide"><img id="riddle" src="normal.png"></div>
+            <div class="swiper-slide"><img id="b" src="normal.png"></div>
+            <div class="swiper-slide"><img id="b" src="normal.png"></div>
+            <div class="swiper-slide"><img id="b" src="normal.png"></div>
+        </div>
+    </div>
+    <p>
+        <label>解答入力<input type="text" class="intext" id="nameText"></label>
+        <input type="button" value="Check" id="checkButton">
+    </p>
+    <p>score : <label id="score"> 0</label>皿 / <label id="length"> 0</label>皿</p>
+    <form name="form1" id="form1">
+        <p id="time">
+            00:00:00.00
+        </p>
+    </form>
+
+    <a href="javascript:onClick()"></a>
+    <!-- CDN読み込み -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- JSファイル読み込み -->
+    <script src="main.js"></script>
+</body>
+
+</html>
