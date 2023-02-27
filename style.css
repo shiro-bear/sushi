@@ -1,0 +1,33 @@
+.infinite-slider {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* スライダーのwrapper */
+.infinite-slider .swiper-wrapper {
+    transition-timing-function: linear;
+}
+
+/* スライド */
+.infinite-slider .swiper-slide {
+    height: 320px !important;
+    /* 高さを指定 */
+    width: auto !important;
+}
+
+/* スライド内の画像 */
+.infinite-slider .swiper-slide img {
+    width: auto;
+    height: 100%;
+}
+
+.intext {
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+p {
+    text-align: center;
+    font-size: 100%;
+}
