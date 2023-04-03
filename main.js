@@ -10,7 +10,7 @@ var swiper = new Swiper('.infinite-slider', {
     //loop: true,
     loopedSlides: 2,
     slidesPerView: "auto",
-    speed: 12000,
+    speed: 14000,
     allowTouchMove: false,
     autoplay: {
         delay: 0,
