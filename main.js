@@ -1,16 +1,16 @@
-//let ans = ['スタート', 'いくら', 'ほたて', 'さんま', 'まぐろ', 'いわし', 'にしん', 'えび', 'いとう', 'まんぼう', 'いか'];
-//let inputimage = ['11.png', '12.png', '13.png', '14.png', '15.png', '16.png', '17.png', '18.png', '19.png', '110.png'];
+let ans = ['スタート', 'たこ', 'さんま', 'たまご', 'なっとうまき', 'さーもん', 'のどぐろ', 'きんめだい', 'まぐろ', 'いくら', 'ひらめ'];
+let inputimage = ['11.png', '12.png', '13.png', '14.png', '15.png', '16.png', '17.png', '18.png', '19.png', '110.png'];
 //let ans = ['スタート', 'すいか', 'きんぎょ', 'ちきゅう', 'かま', 'もくし', 'どくろ', 'てんし', 'かい'];
 //let inputimage = ['21.png', '22.png', '23.png', '24.png', '25.png', '26.png', '27.png', '28.png'];
-let ans = ['スタート', 'くれーぷ', 'ぱふぇ', 'すふれ', 'ちーずけーき', 'あいすくりーむ', 'ぷりん', 'ぱんなこった', 'てぃらみす', 'ばばろあ', 'ぱい'];
-let inputimage = ['31.png', '32.png', '33.png', '34.png', '35.png', '36.png', '37.png', '38.png', '39.png', '310.png'];
+//let ans = ['スタート', 'くれーぷ', 'ぱふぇ', 'すふれ', 'ちーずけーき', 'あいすくりーむ', 'ぷりん', 'ぱんなこった', 'てぃらみす', 'ばばろあ', 'ぱい'];
+//let inputimage = ['31.png', '32.png', '33.png', '34.png', '35.png', '36.png', '37.png', '38.png', '39.png', '310.png'];
 let score = 0;
 //swiper設定
 var swiper = new Swiper('.infinite-slider', {
     //loop: true,
     loopedSlides: 2,
     slidesPerView: "auto",
-    speed: 7000,
+    speed: 12000,
     allowTouchMove: false,
     autoplay: {
         delay: 0,
