@@ -1,16 +1,17 @@
-let ans = ['スタート', 'たこ', 'さんま', 'たまご', 'なっとうまき', 'さーもん', 'のどぐろ', 'きんめだい', 'まぐろ', 'いくら', 'ひらめ'];
-let inputimage = ['11.png', '12.png', '13.png', '14.png', '15.png', '16.png', '17.png', '18.png', '19.png', '110.png'];
+//let ans = ['スタート', 'たこ', 'さんま', 'たまご', 'なっとうまき', 'さーもん', 'のどぐろ', 'きんめだい', 'まぐろ', 'いくら', 'ひらめ'];
+//let inputimage = ['11.png', '12.png', '13.png', '14.png', '15.png', '16.png', '17.png', '18.png', '19.png', '110.png'];
 //let ans = ['スタート', 'すいか', 'きんぎょ', 'ちきゅう', 'かま', 'もくし', 'どくろ', 'てんし', 'かい'];
 //let inputimage = ['21.png', '22.png', '23.png', '24.png', '25.png', '26.png', '27.png', '28.png'];
-//let ans = ['スタート', 'くれーぷ', 'ぱふぇ', 'すふれ', 'ちーずけーき', 'あいすくりーむ', 'ぷりん', 'ぱんなこった', 'てぃらみす', 'ばばろあ', 'ぱい'];
-//let inputimage = ['31.png', '32.png', '33.png', '34.png', '35.png', '36.png', '37.png', '38.png', '39.png', '310.png'];
+let ans = ['スタート', 'くれーぷ', 'ぱふぇ', 'すふれ', 'ちーずけーき', 'あいすくりーむ', 'ぷりん', 'ぱんなこった', 'てぃらみす', 'ばばろあ', 'ぱい'];
+let inputimage = ['31.png', '32.png', '33.png', '34.png', '35.png', '36.png', '37.png', '38.png', '39.png', '310.png'];
 let score = 0;
+let speed = 3;//出てから消えるまでの秒数
 //swiper設定
 var swiper = new Swiper('.infinite-slider', {
     //loop: true,
     loopedSlides: 2,
     slidesPerView: "auto",
-    speed: 13000,
+    speed: speed / 3 * 1000,
     allowTouchMove: false,
     autoplay: {
         delay: 0,
@@ -58,13 +59,13 @@ function next() {
     var rid = document.getElementById('riddle');
     if (count == 0) {
         rid.src = inputimage[count];
-        startStop()
+        start();
     }
     else if (count < inputimage.length) {
         rid.src = inputimage[count];
     } else {
         rid.src = 'normal.png';
-        startStop();
+        stop();
     }
     count++;
     swiper.update();
@@ -80,16 +81,6 @@ function next() {
 
 
 
-//プログラムそのままお借りしました
-// -------------------------------------------------------------------------
-// stopWatch.js ストップウォッチプログラム
-//
-//		1970年1月1日からの経過時間（ミリ秒単位）を使っている
-//
-// 					created at 2014-06-26 on torisky.com
-// -------------------------------------------------------------------------
-
-var mode;					// ストップウォッチのモード	RUN/STOP
 var startTime;				// スタートした時刻
 var nowTime;				// ストップした時刻
 var addTime;				// 経過時間（ストップウォッチ再開時に加算する）
@@ -99,20 +90,9 @@ var sec;						// 秒
 var min;						// 分
 var hour;					// 時
 var gmt;						// タイムゾーンのオフセット値
-//	例）GMT+0900 なら 標準時より9時間後をさしているので-9する
 var timerId;					// タイマー
 
-/*
- * 定数
- */
-var RUN = 1;				// 動作中
-var STOP = 0;				// 停止中
-
-/*
- * ストップウォッチのリセット
- */
 function resetStopWatch() {
-    mode = STOP;
     addTime = 0;
     millisec = sec100 = sec = min = hour = 0;
     gmt = new Date().getTimezoneOffset() / 60;	// 戻り値は分のため60で割る
@@ -122,25 +102,19 @@ function resetStopWatch() {
 /*
  * ボタン処理
  */
-function startStop() {
-    switch (mode) {
-        case STOP:		// スタートを押したとき
-            mode = RUN;
-            timerId = setTimeout(runStopWatch, 10);
-
-            // スタート時刻を設定（ストップウォッチが進んでいれば加算）
-            startTime = new Date().getTime();
-            addTime = (hour * 60 * 60 * 1000 + min * 60 * 1000 + sec * 1000 + millisec);
-            startTime -= addTime;
-            break;
-
-        case RUN:		// ストップを押したとき
-            mode = STOP;
-            clearTimeout(timerId);
-            drawTime();
-    }
+function stop() {
+    clearTimeout(timerId);
+    drawTime();
 }
 
+
+function start() {
+    timerId = setTimeout(runStopWatch, 10);
+    // スタート時刻を設定（ストップウォッチが進んでいれば加算）
+    startTime = new Date().getTime();
+    addTime = (hour * 60 * 60 * 1000 + min * 60 * 1000 + sec * 1000 + millisec);
+    startTime -= addTime;
+}
 /*
  * 時間表示
  */
