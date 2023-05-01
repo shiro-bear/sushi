@@ -5,7 +5,7 @@
 let ans = ['スタート', 'くれーぷ', 'ぱふぇ', 'すふれ', 'ちーずけーき', 'あいすくりーむ', 'ぷりん', 'ぱんなこった', 'てぃらみす', 'ばばろあ', 'ぱい'];
 let inputimage = ['31.png', '32.png', '33.png', '34.png', '35.png', '36.png', '37.png', '38.png', '39.png', '310.png'];
 let score = 0;
-let speed = 3;//出てから消えるまでの秒数
+let speed = 30;//出てから消えるまでの秒数
 //swiper設定
 var swiper = new Swiper('.infinite-slider', {
     //loop: true,
